@@ -1,6 +1,6 @@
 <?php
 
-if($_SERVER['SERVER_NAME']=='ordaley.herokuapp.com'){
+if($_SERVER['SERVER_NAME']=='evento-apis.herokuapp.com'){
     $dbServername = "ba1aqmwbfbm7wpxcgmml-mysql.services.clever-cloud.com";
     $dbUsername = "uddluf3qkicdaamn";
     $dbPassword = "iJG3BTYXiXCN7LMYqRwA" ;
