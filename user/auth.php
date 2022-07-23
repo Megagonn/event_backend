@@ -3,9 +3,15 @@
     include '../my.php';
     
     function auth($token){
-
-        
-
+        $getToken = getData('tokens','token',$token);
+        if($getToken){
+            $id = $getToken['userid'];   
+            $user = getData('users','userid',$id);
+            return $user;
+        }
+        else {
+            return false;
+        }
     }
     function createToken($id){
         $token = gen();
