@@ -69,4 +69,8 @@
             return false;
         }
     }
+    function getUserById($id){
+        return getData('users','userid',$id);
+    }
+
 ?>

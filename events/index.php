@@ -8,6 +8,10 @@
         $sql = query("SELECT * FROM events WHERE userid='$id'");
         $events = [];
         while($row = fetch($sql)){
+            unset($row['userid']);
+            unset($user['userid']);
+            unset($user['userpassword']);
+            $row['organizer'] = $user;
             array_push($events, $row);
         }
         $result->events = $events;
