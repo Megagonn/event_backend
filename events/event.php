@@ -2,7 +2,6 @@
     include '../user/auth.php';
     include '../queries/index.php';
     allowedMethod('POST');
-    if($user = auth(getBearer())){
         $data = request();
         try {
             $result = new stdClass;
@@ -12,6 +11,7 @@
 
             if($sql){
                 $code = 200;
+                $user = getUserById($sql['userid']);
                 unset($user['userid']);
                 unset($sql['userid']);
                 unset($user['userpassword']);
@@ -27,9 +27,6 @@
         catch(Exception $err){
             say(203,"Error Occured");
         }
-
-
-    }
 
 
 ?>
