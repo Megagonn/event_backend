@@ -12,7 +12,7 @@ else {
 $dbServername = "localhost";
 $dbUsername = "root";
 $dbPassword = "" ;
-$dbName ="ordaley";
+$dbName ="eventbackend";
 $conn = mysqli_connect($dbServername, $dbUsername,$dbPassword,$dbName);
 }
 /*

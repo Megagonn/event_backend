@@ -1,6 +1,7 @@
 <?php
     include 'auth.php';
-    include '../emails/welcome.php';
+    include '../queries/index.php';
+
 
     allowedMethod("POST");
     $data = request();
@@ -16,8 +17,12 @@
                 if(strlen($name)<4){
                     say(203,"Username must be more than 3 characters");
                 }
+                else if(emailexist($email)){
+                   return say(203, "Email already exists");
+                }
                 else {
-                    
+                    //register 
+                    return registerUser($name, $email, $password);
                 }   
             }
         }

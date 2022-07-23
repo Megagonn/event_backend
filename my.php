@@ -104,12 +104,12 @@ function notify($notification,$showto,$type){
         // die();
       }
       else {
-        $mail = mailme($email,$name,"Welcome to MedCord",$message);
-        if($mail->code!=200){
-            $mail = mailme($email,$name,"Welcome to MedCord",$message);
-            if($mail->code!=200){
-                failedmails($message,$email);
-                logerror($mail->error);
+        $mail = mailme($email,$name,"Welcome to MedCord",$message, "type");
+        if($mail){
+            $mail = mailme($email,$name,"Welcome to MedCord",$message,"type");
+            if($mail){
+                //failedmails($message,$email);
+                logerror($mail);
             }
         }
         $sql = query("INSERT INTO subs(subemail,subname,subtimest) VALUES('$email','$name','$date')");
@@ -241,6 +241,7 @@ function get($el){
 }
 function query($el){
     include 'dbh.php';
+    //var_dump($el);
     return mysqli_query($conn,$el);
 
 }
