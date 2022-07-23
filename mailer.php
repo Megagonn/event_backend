@@ -27,11 +27,11 @@ try {
    $mail->SMTPSecure = 'tls';
 
 /* Username (email address). */
-   $from = 'phalconwise@gmail.com';
+   $from = 'phingerie@gmail.com';
    $mail->Username = $from;
 
 /* Google account password. */
-   $mail->Password = 'uziawcwumdhqvbeq';
+   $mail->Password = 'krodiepbngwwpvtz';
   
 
    // $mail->Username = 'welcome@ordaley.com';
@@ -86,8 +86,13 @@ try {
 }
 catch (Exception $e)
 {
-  var_dump($e->errorMessage());
-   return false;
+  //var_dump($e->errorMessage());
+   if(isLocal()){
+      return true;
+   }
+   else {
+      return false;
+   }
    
 }
 

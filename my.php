@@ -19,6 +19,12 @@ function parse($el){
 function i($d,$e){
     return parse($d->$e);
 }
+function isLocal(){
+    if($_SERVER['SERVER_NAME'] == "localhost") {
+        return true;
+    }
+    return false;
+}
 function request(){
     $dat = file_get_contents("php://input");
     if(empty($dat)){
