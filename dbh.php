@@ -1,10 +1,10 @@
 <?php
 
 if($_SERVER['SERVER_NAME']=='evento-apis.herokuapp.com'){
-    $dbServername = "ba1aqmwbfbm7wpxcgmml-mysql.services.clever-cloud.com";
-    $dbUsername = "uddluf3qkicdaamn";
-    $dbPassword = "iJG3BTYXiXCN7LMYqRwA" ;
-    $dbName ="ba1aqmwbfbm7wpxcgmml";
+    $dbServername = "brsraa3qybidohuky0fg-mysql.services.clever-cloud.com";
+    $dbUsername = "uezoprczfgvgbfe9";
+    $dbPassword = "ueBaZglJuFR20eDqiLJ8" ;
+    $dbName ="brsraa3qybidohuky0fg";
     $conn = mysqli_connect($dbServername, $dbUsername,$dbPassword,$dbName);
     
 }
